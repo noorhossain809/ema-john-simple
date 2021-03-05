@@ -13,6 +13,8 @@ const Header = () => {
                 <a href="/review">Order Review</a>
                 <a href="/inventory">Manage Inventory</a>
             </nav>
+            
+            
         </div>
     );
 };

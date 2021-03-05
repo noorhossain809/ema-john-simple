@@ -1,17 +1,16 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
+
 
 const Cart = (props) => {
     const cart = props.cart;
-    const total = cart.reduce((total, prd) => total + prd.price, 0)
-    //  let total = 0;
-    //  for (let i = 0; i < cart.length; i++) {
-    //      const product = cart[i];
-    //      total = total + product.price;
+    // const total = cart.reduce((total, prd) => total + prd.price, 0)
+    let total = 0;
+    for (let i = 0; i < cart.length; i++) {
+         const product = cart[i];
+         total = total + product.price * product.quantity;
          
-    //  }
+         
+      }
 
     let shipping = 0;
     if(total > 35){
@@ -38,10 +37,10 @@ const Cart = (props) => {
             <p><small>Shipping Cost: {shipping}</small></p>
             <p><small>Tax + VAT: {tax}</small></p>
             <p>Total Price: {grandTotal}</p>
-            <Link to="/review">
-                <button className="main-button">
-                <FontAwesomeIcon icon={faShoppingCart} /> Review Order</button></Link>
-
+            
+            {
+                props.children
+            }
         </div>
     );
 };

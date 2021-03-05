@@ -1,7 +1,7 @@
 import React from 'react';
 
 const ReviewItem = (props) => {
-    const {img, name, quantity, price} = props.product
+    const {img, name, quantity, price, key} = props.product
     return (
         <div className="product">
             <img src={img} alt=""/>
@@ -9,7 +9,7 @@ const ReviewItem = (props) => {
             <h4>{name}</h4>
             <p>Quantity: {quantity}</p>
             <h5>Price: $ {price}</h5>
-            <button className="main-button">Remove</button>
+            <button className="main-button" onClick={() => props.removeProduct(key)}>Remove</button>
             </div>
         </div>
     );

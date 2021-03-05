@@ -27,3 +27,6 @@ nav a:hover{
     background-color: gray;
     border-radius: 3px;
 }
+.input{
+    width: 100%;
+}
